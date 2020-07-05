@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html  lang="zh" >
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <title>主题选择</title>
+    <!--[if lt IE 9]>
+    <meta http-equiv="refresh" content="0;ie.html"/>
+    <![endif]-->
+    <style type="text/css">
+		*{padding: 0;margin: 0;border: 0;}
+	</style>
+</head>
+<body>
+	<div id="btn">点我</div>
+	<ul id="list">
+		
+	</ul>
+</body>
+<script type="text/javascript" src="./js/SuperUpload.js"></script>
+<script type="text/javascript">
+
+	new SuperUpload({
+			el: 'btn',
+			url: 'http://localhost:8888/files-system/sys/upload/upload',
+			async: false,
+			bindEl: 'sc',
+			file: {
+				type: 'file',
+				multiple: 'multiple',
+				accept: 'audio/*,video/*,image/*'
+			},
+			preview: function(e, files){
+				console.log(e);
+				console.log(files);
+				var d = document.getElementById("list");
+				d.innerHTML = "";
+				for (var f in files) {
+					var li = document.createElement("li");
+					li.innerHTML = f + "\t"  + files[f];
+					d.appendChild(li);
+				}
+			},
+			done: function(e,code){
+				console.log(e, code);
+				if (code == 200) {
+					alert("文件上传成功", JSON.stringify(e));
+				}
+			}
+		});
+</script>
+</html>
