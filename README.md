@@ -24,3 +24,8 @@ new SuperUpload({
   });
 
 ~~~
+效果图：
+![Image text]( https://github.com/ME-liuchunfu/SuperUpload/blob/master/image/111.png)
+![Image text]( https://github.com/ME-liuchunfu/SuperUpload/blob/master/image/222.png)
+![Image text]( https://github.com/ME-liuchunfu/SuperUpload/blob/master/image/333.png)
+
