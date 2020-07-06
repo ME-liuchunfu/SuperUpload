@@ -4,7 +4,7 @@
 使用方式，将js文件夹下的SurperUpload.js引入。
 例子：
 ~~~js
-new SuperUpload({
+var sp = new SuperUpload({
     el: 'btn', // 绑定触发文件选择的节点
     url: '', // 文件上传的地址
     async: false, // 是否异步上传， false为同步上传，选择文件后立即上传，默认true异步上传
@@ -23,6 +23,10 @@ new SuperUpload({
     }
   });
 
+
+表单提交的时候可以使用:
+var flag = sp.validata();
+flag == true ==> 安全，，否则：不安全的提交
 ~~~
 效果图：
 ![Image text]( https://github.com/ME-liuchunfu/SuperUpload/blob/master/image/111.png)
